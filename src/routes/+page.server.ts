@@ -1,4 +1,4 @@
-import type { JobsList } from "../data/models";
+import type { ProductsList } from "../data/models";
 
 export const load = async () => {
   const response = await fetch("https://api.videowise.com/sites/61f02a75d4d5f20029ad21e6/pages?limit=50&skip=0&pageType=Product", {
@@ -6,6 +6,6 @@ export const load = async () => {
   });
   const data = await response.json();
   return {
-    product_list: data.items as JobsList,
+    product_list: data.items as ProductsList,
   };
 };
